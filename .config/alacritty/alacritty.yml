@@ -1,0 +1,11 @@
+window:
+  decorations: full
+
+font:
+  size: 7.5
+  normal:
+    family: Hack Nerd Font
+  bold:
+    family: Hack Nerd Font
+  italic:
+    family: Hack Nerd Font

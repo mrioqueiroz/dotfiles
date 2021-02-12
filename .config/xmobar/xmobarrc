@@ -1,0 +1,27 @@
+Config { font = "xft:Hack Nerd Font:bold:pixelsize=9:antialias=true:hinting=true"
+       , additionalFonts = []
+       , borderColor = "#1d2021"
+       , border = TopB
+       , bgColor = "#32302f"
+       , fgColor = "#ebdbb2"
+       , alpha = 100
+       , position = Top
+       , textOffset = -1
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run Date "%a %b %_d %Y %H:%M" "date" 50
+                    , Run Cpu [] 100
+                    , Run Memory ["-t","Mem: <usedratio>%"] 50
+                    , Run Swap [] 300
+                    , Run Uptime ["-t","Up: <days>d <hours>h <minutes>m"] 600
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " }{ %date% | %uptime% "
+       }

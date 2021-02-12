@@ -1,0 +1,26 @@
+add_newline = true
+
+[time]
+disabled = true
+
+[battery]
+disabled = false
+
+[[battery.display]]
+threshold = 20
+style = "bold red"
+
+[[battery.display]]
+threshold = 40
+style = "bold yellow"
+
+[[battery.display]]
+threshold = 60
+style = "bold green"
+
+[[battery.display]]
+threshold = 80
+style = "bold white"
+
+[docker_context]
+disabled = false

@@ -1,0 +1,32 @@
+ [core]
+    editor = vim
+    excludesfile = ~/.gitignore_global
+
+[color]
+    ui = true
+
+[alias]
+    co = commit -v
+    br = branch -vv -a
+    
+    cb = checkout -b
+    ch = checkout
+    cm = checkout master
+    cs = checkout staging
+    cd = checkout development
+    
+    pm = !(git push -u origin master)
+    ps = !(git push -u origin staging)
+    pd = !(git push -u origin development)
+    
+    fe = fetch -v
+    gr = grep -Iin    
+    
+    lo = log --pretty=fuller --graph --decorate --all --source
+    st = status -sb
+    unstage = reset HEAD --
+    undo = checkout --
+    rollback = reset --soft HEAD~1
+
+[credential]
+    helper = cache
