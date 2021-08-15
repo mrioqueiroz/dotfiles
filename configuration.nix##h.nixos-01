@@ -1,0 +1,57 @@
+{ config, ... }:
+
+{
+  imports = [
+    ./hardware-configuration.nix
+    /home/mario/common-config.nix
+  ];
+
+  networking = {
+    hostName = "nixos-01";
+  };
+
+  systemd = {
+    mounts = [
+      {
+        description = "Restic backup";
+        enable = true;
+        what = "/dev/disk/by-label/ssd";
+        where = "/run/mount/backup";
+        type = "ext4";
+        wantedBy = [
+          "multi-user.target"
+        ];
+        requiredBy = [
+          "restic-backups-local.timer"
+        ];
+        after = [
+          "network.target"
+        ];
+      }
+    ];
+  };
+
+  services = {
+    restic = {
+      backups = {
+        local = {
+          initialize = true;
+          user = "root";
+          passwordFile = "/home/mario/.restic-key";
+          paths = [
+            "/home/mario"
+          ];
+          repository = "/run/mount/backup/01";
+          timerConfig = {
+            OnCalendar = "03:00";
+          };
+          extraBackupArgs = [
+            "--tag automatic"
+          ];
+        };
+      };
+    };
+  };
+
+  system.stateVersion = "20.03";
+}

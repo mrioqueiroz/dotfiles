@@ -1,0 +1,39 @@
+{ config, ... }:
+
+{
+  imports = [
+    ./hardware-configuration.nix
+    /home/mario/common-config.nix
+  ];
+
+  networking = {
+    hostName = "nixos-02";
+  };
+  
+  services = {
+    restic = {
+      backups = {
+        remote = {
+          initialize = true;
+          user = "root";
+          extraOptions = [
+            "sftp.command='ssh root@01-builder -s sftp'"
+          ];
+          passwordFile = "/home/mario/.restic-key";
+          paths = [
+            "/home/mario"
+          ];
+          repository = "sftp:root@01:/run/mount/backup/02";
+          timerConfig = {
+            OnCalendar = "05:00";
+          };
+          extraBackupArgs = [
+            "--tag auto"
+          ];
+        };
+      };
+    };
+  };
+
+  system.stateVersion = "20.09";
+}
