@@ -1,5 +1,8 @@
 # dotfiles
 
+![Example 01](https://github.com/mrioqueiroz/dotfiles/raw/master/setup-01.png)
+![Example 02](https://github.com/mrioqueiroz/dotfiles/raw/master/setup-02.png)
+
 - Theme: [Gruvbox](https://github.com/morhetz/gruvbox)
 - Dotfiles manager: [YADM](https://yadm.io/).
 
