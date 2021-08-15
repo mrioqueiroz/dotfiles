@@ -1,4 +1,5 @@
 add_newline = true
+command_timeout = 1000
 
 [time]
 disabled = true
@@ -24,3 +25,14 @@ style = "bold white"
 
 [docker_context]
 disabled = false
+
+[status]
+disabled = false
+map_symbol = true
+
+[shell]
+disabled = false
+
+[kubernetes]
+disabled = false
+format = 'on [⛵ $context \($namespace\)](cyan bold) '

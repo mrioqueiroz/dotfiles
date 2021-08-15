@@ -1,8 +1,8 @@
-Config { font = "xft:Hack Nerd Font:bold:pixelsize=9:antialias=true:hinting=true"
+Config { font = "xft:Hack Nerd Font:bold:pixelsize=12:antialias=true:hinting=true"
        , additionalFonts = []
-       , borderColor = "#1d2021"
-       , border = TopB
-       , bgColor = "#32302f"
+       , borderColor = "#282828"
+       , border = NoBorder
+       , bgColor = "#3c3836"
        , fgColor = "#ebdbb2"
        , alpha = 100
        , position = Top
@@ -20,8 +20,9 @@ Config { font = "xft:Hack Nerd Font:bold:pixelsize=9:antialias=true:hinting=true
                     , Run Memory ["-t","Mem: <usedratio>%"] 50
                     , Run Swap [] 300
                     , Run Uptime ["-t","Up: <days>d <hours>h <minutes>m"] 600
+                    , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " }{ %date% | %uptime% "
+       , template = " %cpu% | %memory% | %swap% }{ %date% | %uptime% "
        }
