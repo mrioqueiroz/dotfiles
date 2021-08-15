@@ -1,4 +1,7 @@
-[ -z "$PS1" ] && return 
+[ -z "$PS1" ] && return
+
+if [ $IN_NIX_SHELL == "pure" ]; then return; fi
+
 
 rga-fzf() {
 	RG_PREFIX="rga --files-with-matches"
@@ -14,11 +17,15 @@ rga-fzf() {
 	xdg-open "$file"
 }
 
-export HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth # ignoredups:ignorespace
 HISTSIZE=5000
 HISTFILESIZE=10000
 export HISTIGNORE="h:c:q:e:z:clear:bg:fg:cd:cd -:cd ..:exit:date:w:* --help:ls:l:ll:lll"
-shopt -s histappend    
+shopt -s histappend
+
+shopt -s checkwinsize
+
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 function extract {
  if [ -z "$1" ]; then
@@ -55,6 +62,7 @@ function extract {
 fi
 }
 
+
 mkcdr () { 
     mkdir -p -v $1 
     cd $1 
@@ -63,3 +71,4 @@ mkcdr () {
 source ~/.git-completion.bash
 eval "$(starship init bash)"
 eval "$(zoxide init bash)"
+eval "$(direnv hook bash)"
