@@ -1,5 +1,7 @@
 # dotfiles
 
+[![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
+
 ![Example 01](https://github.com/mrioqueiroz/dotfiles/raw/master/setup-01.png)
 ![Example 02](https://github.com/mrioqueiroz/dotfiles/raw/master/setup-02.png)
 
