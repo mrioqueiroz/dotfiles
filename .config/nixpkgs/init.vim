@@ -40,7 +40,7 @@ set shiftwidth=2
 set softtabstop=2
 set expandtab
 
-nmap <leader>/ :nohlsearch<CR> " clear search highlights
+nmap <leader>/ :nohlsearch<CR>
 
 set undodir=~/.vimdid
 set undofile
@@ -64,7 +64,7 @@ vnoremap <leader>d c<c-r>=system('base64 --decode', @")<cr><esc>
 vnoremap <M-j> :m '>+1<CR>gv=gv
 vnoremap <M-k> :m '>-2<CR>gv=gv
 
-nnoremap <leader><space> <c-^> " go to alternate file
+nnoremap <leader><space> <c-^>
 
 tnoremap jj <C-\><C-n>
 inoremap jj <esc>:w<cr>
