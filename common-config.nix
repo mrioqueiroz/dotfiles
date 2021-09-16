@@ -199,8 +199,6 @@ in {
       ];
     };
 
-    headphones = { enable = true; };
-
     jack = {
       alsa = {
         enable = true;
