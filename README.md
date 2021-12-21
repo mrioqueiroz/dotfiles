@@ -66,7 +66,3 @@ here:
 
 This repository is kind of a mirror of my actual dotfiles, as the original
 repository is not public yet.
-
-## Basic demonstration
-
-[![Demo](https://img.youtube.com/vi/FCuui7N6jvM/0.jpg)](https://www.youtube.com/watch?v=FCuui7N6jvM)
